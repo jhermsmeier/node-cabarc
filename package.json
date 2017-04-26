@@ -1,0 +1,32 @@
+{
+  "name": "cabarc",
+  "version": "0.0.0",
+  "description": "Microsoft Cabinet Archive Format",
+  "author": "Jonas Hermsmeier <jhermsmeier@gmail.com> (https://jhermsmeier.de)",
+  "license": "MIT",
+  "keywords": [
+    "ms",
+    "microsoft",
+    "cab",
+    "archive",
+    "format",
+    "parser",
+    "compression"
+  ],
+  "main": "lib/cabinet.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "peerDependencies": {},
+  "optionalDependencies": {},
+  "homepage": "https://github.com/jhermsmeier/node-cabarc",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jhermsmeier/node-cabarc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jhermsmeier/node-cabarc/issues"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
