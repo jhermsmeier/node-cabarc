@@ -12,6 +12,11 @@ Microsoft Cabinet Archive Format
 $ npm install --save cabarc
 ```
 
+## Related Modules
+
+- [wim](http://github.com/jhermsmeier/node-wim) – Windows Imaging File Format (WIM)
+- [lzx](http://github.com/jhermsmeier/node-lzx) – LZX Compression Algorithm
+
 ## Usage
 
 ```js
