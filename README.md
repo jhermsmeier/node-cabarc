@@ -23,6 +23,15 @@ $ npm install --save cabarc
 var Cabinet = require( 'cabarc' )
 ```
 
+```js
+var cab = new Cabinet.Archive()
+
+cab.open( 'path/to/filename.cab', function( error ) {
+  if( error ) throw error
+  console.log( cab.header )
+})
+```
+
 ## References
 
 - [MSDN / Microsoft Cabinet Format](https://msdn.microsoft.com/en-us/library/bb417343.aspx?f=255&MSPPError=-2147217396)
