@@ -53,7 +53,7 @@ describe( 'Cabinet.Archive', function() {
 
           // NOTE: Skip compressed cab tests,
           // as compression methods aren't implemented yet
-          var skip = !/none.cab$/i.test( filename )
+          var skip = !/(none|mszip).cab$/i.test( filename )
 
           specify( 'README.md', function( done ) {
             if( skip ) this.skip()
