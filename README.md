@@ -23,6 +23,8 @@ $ npm install --save cabarc
 var Cabinet = require( 'cabarc' )
 ```
 
+### Opening a Cabinet archive
+
 ```js
 var cab = new Cabinet.Archive()
 
@@ -94,6 +96,14 @@ Archive {
     }
   ]
 }
+```
+
+### Reading a file
+
+```js
+cab.readFile( 'foldername/somefile.txt', function( error, buffer ) {
+  console.log( error ? error : buffer.toString() )
+})
 ```
 
 ## References
