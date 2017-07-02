@@ -30,7 +30,7 @@ describe( 'Cabinet.Archive', function() {
         })
 
         specify( 'header', function() {
-          assert.strictEqual( cab.header.signature, Cabinet.MAGIC, 'Invalid magic' )
+          assert.strictEqual( cab.header.signature, Cabinet.SIGNATURE, 'Invalid signature' )
           assert.strictEqual( cab.header.setId, 12345, 'Invalid set ID' )
           assert.ok( cab.header.fileCount > 0, 'No contained files' )
           assert.ok( cab.header.folderCount > 0, 'No contained folders' )
