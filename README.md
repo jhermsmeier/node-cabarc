@@ -34,5 +34,5 @@ cab.open( 'path/to/filename.cab', function( error ) {
 
 ## References
 
-- [MSDN / Microsoft Cabinet Format](https://msdn.microsoft.com/en-us/library/bb417343.aspx?f=255&MSPPError=-2147217396)
+- [MSDN / Microsoft Cabinet Format](https://msdn.microsoft.com/en-us/library/bb417343.aspx)
 - [Wikipeda / Cabinet File Format](https://en.wikipedia.org/wiki/Cabinet_(file_format))
