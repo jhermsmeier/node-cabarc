@@ -18,25 +18,66 @@ describe( 'Cabinet.Archive', function() {
 
         var cab = null
 
-        specify( 'constructor', function() {
+        before( 'constructor', function() {
           cab = new Cabinet.Archive()
         })
 
-        specify( `open('${basename}')`, function( done ) {
+        before( `open('${basename}')`, function( done ) {
           cab.open( filename, function( error ) {
-            // console.log( basename, inspect( error || cab ), '\n' )
+            console.log( basename, inspect( error || cab ), '\n' )
             done( error )
           })
         })
 
-        specify( 'header', function() {
-          assert.strictEqual( cab.header.signature, Cabinet.SIGNATURE, 'Invalid signature' )
-          assert.strictEqual( cab.header.setId, 12345, 'Invalid set ID' )
-          assert.ok( cab.header.fileCount > 0, 'No contained files' )
-          assert.ok( cab.header.folderCount > 0, 'No contained folders' )
+        context( 'header', function() {
+
+          specify( 'Signature', function() {
+            assert.strictEqual( cab.header.signature, Cabinet.SIGNATURE, 'Invalid signature' )
+            assert.strictEqual( cab.header.setId, 12345, 'Invalid set ID' )
+            assert.ok( cab.header.fileCount > 0, 'No contained files' )
+            assert.ok( cab.header.folderCount > 0, 'No contained folders' )
+          })
+
+          specify( 'Set-ID', function() {
+            assert.strictEqual( cab.header.setId, 12345, 'Invalid set ID' )
+          })
+
+          specify( 'File & folder count', function() {
+            assert.ok( cab.header.fileCount > 0, 'No contained files' )
+            assert.ok( cab.header.folderCount > 0, 'No contained folders' )
+          })
+
         })
 
-        specify( 'close()', function( done ) {
+        context( 'readFile()', function() {
+
+          // NOTE: Skip compressed cab tests,
+          // as compression methods aren't implemented yet
+          var skip = !/none.cab$/i.test( filename )
+
+          specify( 'README.md', function( done ) {
+            if( skip ) this.skip()
+            var expected = fs.readFileSync( path.join( __dirname, 'data', 'source', 'README.md' ) )
+            cab.readFile( 'README.md', function( error, buffer ) {
+              assert.ifError( error )
+              assert.ok( expected.equals( buffer ), 'Read data does not match' )
+              done( error )
+            })
+          })
+
+          specify( 'foldername/somefile.txt', function( done ) {
+            if( skip ) this.skip()
+            var expected = fs.readFileSync( path.join( __dirname, 'data', 'source', 'foldername/somefile.txt' ) )
+            cab.readFile( 'foldername/somefile.txt', function( error, buffer ) {
+              assert.ifError( error )
+              assert.ok( expected.equals( buffer ), 'Read data does not match' )
+              done( error )
+            })
+          })
+
+        })
+
+        after( 'close()', function( done ) {
           cab.close( done )
         })
 
