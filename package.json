@@ -16,7 +16,7 @@
   "main": "lib/cabinet.js",
   "dependencies": {},
   "devDependencies": {
-    "mocha": "^3.4.2",
+    "mocha": "^6.1.4",
     "nanobench": "^2.1.0"
   },
   "peerDependencies": {},
