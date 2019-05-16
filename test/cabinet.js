@@ -24,7 +24,7 @@ describe( 'Cabinet.Archive', function() {
 
         before( `open('${basename}')`, function( done ) {
           cab.open( filename, function( error ) {
-            console.log( basename, inspect( error || cab ), '\n' )
+            // console.log( basename, inspect( error || cab ), '\n' )
             done( error )
           })
         })
@@ -53,7 +53,7 @@ describe( 'Cabinet.Archive', function() {
 
           // NOTE: Skip compressed cab tests,
           // as compression methods aren't implemented yet
-          var skip = !/none.cab$/i.test( filename )
+          var skip = !/(none).cab$/i.test( filename )
 
           specify( 'README.md', function( done ) {
             if( skip ) this.skip()
