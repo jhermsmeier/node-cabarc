@@ -2,7 +2,7 @@
 [![npm](https://img.shields.io/npm/v/cabarc.svg?style=flat-square)](https://npmjs.com/package/cabarc)
 [![npm license](https://img.shields.io/npm/l/cabarc.svg?style=flat-square)](https://npmjs.com/package/cabarc)
 [![npm downloads](https://img.shields.io/npm/dm/cabarc.svg?style=flat-square)](https://npmjs.com/package/cabarc)
-[![build status](https://img.shields.io/travis/jhermsmeier/node-cabarc.svg?style=flat-square)](https://travis-ci.org/jhermsmeier/node-cabarc)
+[![build status](https://img.shields.io/travis/jhermsmeier/node-cabarc/master.svg?style=flat-square)](https://travis-ci.org/jhermsmeier/node-cabarc)
 
 Microsoft Cabinet Archive Format
 
