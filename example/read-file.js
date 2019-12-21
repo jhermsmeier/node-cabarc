@@ -17,6 +17,6 @@ cab.open( archiveFilename, ( error ) => {
   console.log( path.basename( archiveFilename ), inspect( error || cab ), '\n' )
   cab.readFile( filename, ( error, file ) => {
     console.log( filename, inspect( error || file ), '\n' )
-    console.log( file.toString() )
+    console.log( file && file.toString() )
   })
 })
